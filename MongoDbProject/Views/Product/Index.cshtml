@@ -1,0 +1,83 @@
+﻿@using MongoDbProject.Models
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout_Mainpage.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+
+<body>
+
+    <!--/Banner-Start-->
+    <section class="banner-19">
+        <div class="banner-layer">
+            <div class="main-content-top">
+                <div class="container">
+                    <div class="main-content">
+                        <div class="w3lbanner-left">
+                            <!-- if logo is image enable this
+                            <a class="logo" href="index.html">
+                                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                            </a> -->
+                            <h6>Bizim Çiftliğe Hoşgeldiniz</h6>
+                            <h4>Saf Organik Ürünler</h4>
+
+                            <a href="about.html" class="btn btn-style btn-secondary mt-md-5 mt-4">Devamını Oku</a>
+                        </div>
+                        <div class="w3lbanner-right">
+                            <p>Tamamı kendi üretimimiz olan hayvansal ve bitkisel ürünlerimizi denemek için çifliğimize bekliyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--//Banner-End-->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <h6>Ürünlerimiz</h6>
+                </div>
+                <div class="card-body px-0 pt-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ürün Adı</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ürün Fiyatı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">@item.ProductName</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <span class="mb-0 text-sm">@item.ProductPrice</span>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
